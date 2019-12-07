@@ -228,4 +228,150 @@ public interface ServletRequest {
      * @return 返回一个布尔值，指示请求是否使用安全通道
      */
     boolean isSecure();
+
+    /**
+     * 返回一个充当包装器的{@link RequestDispatcher}对象位于给定路径上的资源
+     * 一个<code>RequestDispatcher</code> 对象可以用来转发对资源的请求或在响应中包含资源
+     * 资源可以是动态的，也可以是静态的
+     * 指定的路径名可能是相对的，但它不能扩展当前servlet上下文之外。如果这条路始于 "/" 被解释为相对于当前上下文根
+     * 返回 <code>RequestDispatcher</code> 或 <code>null</code>
+     * 此方法与{@link ServletContext #getRequestDispatcher}是这个方法可以取一个相对路径
+     *
+     * @param path 指定路径名到资源。如果它是相对的，那它一定是相对于当前servlet
+     * @return 返回一个<code>RequestDispatcher</code> 对象资源在指定路径上的包装，或返回一个<code>null</code>
+     */
+    RequestDispatcher getRequestDispatcher(String path);
+
+    /**
+     * @deprecated Java Servlet API 2.1后废弃
+     * 使用{@link ServletContext#getRealPath}代替
+     */
+    String getRealPath();
+
+    /**
+     * 返回客户端的Internet协议(IP)源端口或发送请求的最后一个代理
+     *
+     * @return 返回一个指定端口号的整数
+     */
+    int getRemotePort();
+
+    /**
+     * 返回收到请求的Internet协议(IP)接口的主机名
+     *
+     * @return 返回一个包含主机的<code>String</code>接收请求的IP的名称
+     */
+    String getLocalName();
+
+    /**
+     * 返回收到请求的Internet协议(IP)接口地址
+     *
+     * @return 接收请求的IP的地址
+     */
+    String getLocalAddr();
+
+    /**
+     * 返回收到请求的Internet协议(IP)接口的端口号
+     *
+     * @return 指定端口号的整数
+     */
+    int getLocalPort();
+
+    /**
+     * 获取该请求最后一次分发后的{@link ServletContext}对象
+     *
+     * @return 请求最后一次分发后的{@link ServletContext}对象
+     * @since 3.0
+     */
+    ServletContext getServletContext();
+
+    /**
+     * 将此请求放入异步模式，并初始化其{@link AsyncContext}与原始的(未包装的)ServletRequest和ServletResponse对象
+     * 调用此方法将导致关联的提交响应被延迟到{@link AsyncContext#complete}，否则，异步调用操作超时
+     * 用返回的AsyncContext调用{@link AsyncContext#hasOriginalRequestAndResponse()}将返回<code>true</code>
+     * 此方法清除在AsyncContext注册的{@link AsyncListener}实例的列表
+     * 在调用每个startAsync前调用AsyncListener的{@link AsyncListener#onStartAsync onStartAsync}方法
+     * 此方法的后续调用，或其重载，将返回相同的AsyncContext实例，重新初始化
+     *
+     * @return 返回(重新)初始化的AsyncContext
+     * @throws IllegalStateException 如果这个请求在一个过滤器的范围内
+     *                               servlet不支持异步，即调用{@link #isAsyncSupported}返回false
+     *                               在没有任何异步分发的情况下再次调用此方法，结果由{@link AsyncContext#dispatch}方法产生
+     *                               在任何此类分派的范围之外调用，或在相同的分发范围内
+     *                               如果响应已经关闭了
+     * @since 3.0
+     */
+    AsyncContext startAsync() throws IllegalStateException;
+
+    /**
+     * 将此请求放入异步模式，并初始化其{@link AsyncContext}与给定的请求和响应对象
+     * 必须有相同的ServletRequest和ServletResponse实例参数，
+     * 或者{@link ServletRequestWrapper}和{@link ServletResponseWrapper}包装它们，
+     * 它们被传递到{@link Servlet#service service}方法的Servlet或{@link Filter#doFilter doFilter}方法
+     * <p>
+     * 调用{@link AsyncContext#hasOriginalRequestAndResponse}返回<code>false</code>
+     * 除非传入ServletRequest和ServletResponse参数是原装的，或不带任何应用程式提供的包装
+     * 此后在<i>outbound（出站）</i>方向调用的任何过滤器，请求被放入异步模式，可以以此作为提示
+     * 他们添加的一些请求和/或响应包装在其<i>inbound（入站）</i>
+     * 调用期间可能需要停留在指定位置，异步操作的持续时间及其关联资源可能不会被释放
+     * <p>
+     * 在<i>入站</i>期间应用的ServletRequestWrapper，过滤器的调用可以由<i>outbound</i>释放
+     * 只有在给定的<code>servletRequest</code>：
+     * 用来初始化<code>AsyncContext</code>并且由{@link AsyncContext#getRequest()}返回的<code>servletRequest</code>对象
+     * 不包含<code>ServletRequestWrapper</code>，这同样适用于<code>ServletResponseWrapper</code>实例
+     *
+     * @param req  servletRequest变量用来初始化<code>AsyncContext</code>
+     * @param resp servletResponse变量用来初始化<code>AsyncContext</code>
+     * @return 返回(重新)初始化的AsyncContext
+     * @throws IllegalStateException 见上面的重载方法
+     * @since 3.0
+     */
+    AsyncContext startAsync(ServletRequest req, ServletResponse resp) throws IllegalStateException;
+
+    /**
+     * 检查此请求是否已进入异步模式
+     * 一个ServletRequest通过调用{@link #startAsync}或{@link #startAsync(ServletRequest, ServletResponse)}进入异步模式
+     * <p>
+     * 如果这个请求已经进入异步模式，但使用一个{@link AsyncContext#dispatch}方法或
+     * 从异步模式通过调用{@link AsyncContext#complete}释放了资源，返回<code>false</code>
+     *
+     * @return 如果这个请求已经进入异步模式，则返回<code>true</code>，否则返回<code>false</code>
+     * @since 3.0
+     */
+    boolean isAsyncStarted();
+
+    /**
+     * 检查此请求是否支持异步操作
+     * 如果这个请求在未被注释的过滤器或servlet的范围内或在部署描述符中标记为能够支持异步处理，异步操作会禁用这个请求
+     *
+     * @return 如果这个请求支持异步操作，则返回<code>true</code>，否则返回<code>false</code>
+     * @since 3.0
+     */
+    boolean isAsyncSupported();
+
+    /**
+     * 返回当前请求最近一次调用{@link #startAsync}或{@link #startAsync(ServletRequest, ServletResponse)}创建或初始化的<code>AsyncContext</code>
+     *
+     * @return 当前请求最近一次调用{@link #startAsync}或{@link #startAsync(ServletRequest, ServletResponse)}创建或初始化的<code>AsyncContext</code>
+     * @throws IllegalStateException 如果该请求不是异步模式
+     *                               如果没有用{@link #startAsync}或{@link #startAsync(ServletRequest, ServletResponse)}调用
+     * @since 3.0
+     */
+    AsyncContext getAsyncContext();
+
+    /**
+     * 获取此请求的分发类型
+     * 一个请求的dispatcher类型被容器使用，选择需要应用于该项要求的过滤器，只有匹配dispatcher类型和url模式的过滤器才会被应用
+     * 允许一个过滤器配置了多个dispatcher类型时通过分发类型用于查询一个请求
+     * 允许过滤器根据不同的分发类型处理请求
+     * <p>
+     * 一个请求的初始分发类型为：<cdoe>DispatcherType.REQUEST</cdoe>
+     * 通过调用{@link RequestDispatcher#forward(ServletRequest, ServletResponse)}转变为<code>DispatcherType.FORWARD</code>
+     * 通过调用{@link RequestDispatcher#include(ServletRequest, ServletResponse)}转变为<code>DispatcherType.INCLUDE</code>
+     * 当一个异步请求调用其中一个{@link AsyncContext#dispatch}方法后，类型转变为<code>DispatcherType.ASYNC</code>
+     * 请求的分发类型通过容器的错误处理将请求发送到错误页，转变为<code>DispatcherType.ERROR</code>
+     *
+     * @return 当前请求的分发类型
+     * @since 3.0
+     */
+    DispatcherType getDispatcherType();
 }

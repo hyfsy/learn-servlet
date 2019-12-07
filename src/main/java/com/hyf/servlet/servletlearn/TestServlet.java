@@ -22,6 +22,9 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("localName：" + req.getLocalName());
+        System.out.println("localAddr：" + req.getLocalAddr());
+        System.out.println("localPort：" + req.getLocalPort());
         System.out.println("isSecure：" + req.isSecure());
         System.out.println("scheme：" + req.getScheme());
         System.out.println("protocol：" + req.getProtocol());
