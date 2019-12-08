@@ -1,7 +1,10 @@
 package com.hyf.servlet;
 
-public interface RequestDispatcher {
-    void forward(ServletRequest req, ServletResponse resp);
+import java.io.IOException;
 
-    void include(ServletRequest req, ServletResponse resp);
+public interface RequestDispatcher {
+
+    void forward(ServletRequest req, ServletResponse resp) throws ServletException, IOException;
+
+    void include(ServletRequest req, ServletResponse resp) throws ServletException, IOException;
 }

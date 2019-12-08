@@ -64,6 +64,7 @@ public interface ServletRequest {
      * 对于HTTP servlet，与CGI变量CONTENT_LENGTH的值相同
      *
      * @return 请求体的长度
+     * @since 3.1
      */
     long getContentLengthLong();
 
