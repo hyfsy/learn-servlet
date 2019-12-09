@@ -22,6 +22,10 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("context : path：" + getServletContext().getContextPath());
+        System.out.println("req context path：" + req.getContextPath());
+        System.out.println(resp.getCharacterEncoding());
+        System.out.println(resp.getContentType());
         System.out.println("localName：" + req.getLocalName());
         System.out.println("localAddr：" + req.getLocalAddr());
         System.out.println("localPort：" + req.getLocalPort());
@@ -34,6 +38,14 @@ public class TestServlet extends HttpServlet {
         System.out.println("remoteHost：" + req.getRemoteHost());
         System.out.println("remotePort：" + req.getRemotePort());
         System.out.println("remoteUser：" + req.getRemoteUser());
+//        设置字符集
+        resp.setContentType("text/html;charset=utf-8");
+//        设置自动刷新页面???无效
+        resp.setHeader("refresh", "3;url=http://www.baidu.com");
+//        设置不缓存
+        resp.setDateHeader("Expires", 0L);
+        resp.setHeader("Cache-Control", "no-cache");
+        resp.setHeader("Pragma", "no-cache");
         resp.getWriter().write("{\"rtn\":\"success\"}");
     }
 

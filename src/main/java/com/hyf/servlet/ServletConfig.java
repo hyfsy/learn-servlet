@@ -28,8 +28,8 @@ public interface ServletConfig {
     String getInitParameter(String name);
 
     /**
-     * 返回一个存放所有servlet初始化参数的<code>Enumeration</code>容器
+     * 返回一个存放所有servlet初始化参数名称的<code>Enumeration</code>容器
      * @return 返回<code>Enumeration</code>容器，如果没有初始化参数返回一个空的<code>Enumeration</code>
      */
-    Enumeration<String> getInitParameters();
+    Enumeration<String> getInitParameterNames();
 }

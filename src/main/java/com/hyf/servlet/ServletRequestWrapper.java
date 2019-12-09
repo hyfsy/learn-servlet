@@ -179,7 +179,7 @@ public class ServletRequestWrapper implements ServletRequest {
 
     /**
      * @deprecated 2.1
-     * use {@link ServletContext#getRealPath} instead
+     * 使用 {@link ServletContext#getRealPath} 代替
      */
     @Override
     public String getRealPath() {

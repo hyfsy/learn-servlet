@@ -1,4 +1,4 @@
 package com.hyf.servlet.http;
 
-public class HttpServletResponse {
+public interface HttpServletResponse {
 }
