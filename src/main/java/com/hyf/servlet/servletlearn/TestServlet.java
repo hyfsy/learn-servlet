@@ -22,6 +22,7 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("context name：" + getServletContext().getServletContextName());
         System.out.println("context : path：" + getServletContext().getContextPath());
         System.out.println("req context path：" + req.getContextPath());
         System.out.println(resp.getCharacterEncoding());

@@ -328,10 +328,170 @@ public interface ServletContext {
     boolean setInitParameter(String name, String value);
 
     /**
+     * 返回指定名称的servlet容器属性，如果没有该名称的属性则返回<code>null</code>
+     * <p>
+     * 可以通过{@link #getAttributeNames()}获取所有的属性名称
+     * <p>
+     * 该属性以<code>java.lang.Object</code>或者一些子类的形式返回
      *
-     * @param name
-     * @return
+     * @param name 属性名称
+     * @return 返回一个包含该值的<code>Object</code>对象，如果没有匹配的属性存在返回<code>null</code>
+     * @see #getAttributeNames()
      */
     Object getAttribute(String name);
 
+    /**
+     * 返回一个<code>枚举</code>，其中包含了ServletContext中可用的属性名
+     * <p>
+     * 使用{@link #getAttribute}方法和属性名 获取属性值
+     *
+     * @return 返回属性名字的<code>Enumeration</code>
+     */
+    Enumeration<String> getAttributeNames();
+
+    /**
+     * 将对象绑定到此ServletContext中的给定属性名。
+     * 如果指定的名称已经存在，方法将把属性值替换为新属性值
+     * <p>
+     * 如果<code>ServletContext</code>中有配置监听器，容器也会相应地通知它们
+     * <p>
+     * 如果传递空值，效果与调用<code>removeAttribute()</code>相同
+     *
+     * @param name   指定的属性名称
+     * @param object 绑定属性名称的对象
+     */
+    void setAttribute(String name, Object object);
+
+    /**
+     * 在ServletContext中删除具有给定名称的属性。
+     * 删除后，随后调用{@link #getAttribute}来检索属性的值将返回<code>null</code>
+     * <p>
+     * 如果<code>ServletContext</code>中有配置监听器，容器也会相应地通知它们
+     *
+     * @param name 指定要删除的属性名称
+     */
+    void removeAttribute(String name);
+
+    /**
+     * 按照display-name元素在此web应用程序的部署描述符中指定的那样，返回与此ServletContext对应的web应用程序的名称
+     *
+     * @return 返回web应用程序的名称，如果没有在部署描述符中声明名称，则返回null
+     */
+    String getServletContextName();
+
+    /**
+     * 将具有给定名称和类名的servlet添加到此servlet的上下文中
+     * <p>
+     * 注册的servlet可以通过返回的{@link ServletRegistration}对象进一步配置
+     * <p>
+     * 指定的<tt>className</tt>将使用与此ServletContext表示的应用程序相关联的类加载器加载
+     * <p>
+     * 如果这个ServletContext已经包含了一个servlet的初步ServletRegistration对象，并具有给定的<tt>servletName</tt>，
+     * 那么它将被完成(通过将给定的<tt>className</tt>分配给它)并返回
+     * <p>
+     * 这个方法用给定的<tt>className</tt>自检类：
+     * <ol>
+     * <li>{@link com.hyf.servlet.annotation.ServletSecurity}</li>
+     * <li>{@link com.hyf.servlet.annotation.MultipartConfig}</li>
+     * <li><tt>javax.annotation.security.RunAs</tt></li>
+     * <li><tt>javax.annotation.security.DeclareRoles</tt></li>
+     * </ol>
+     * 此外，如果具有给定<tt>类名</tt>的类表示托管Bean，则此方法支持资源注入
+     *
+     * @param servletName servlet的名称
+     * @param className   servlet的全类名
+     * @return 返回一个ServletRegistration对象，该对象可以用于进一步的操作配置已注册的servlet，
+     * 否则如果ServletContext已经包含了一个完整的ServletRegistration，并且该servlet具有给定的<tt>servletName</tt>，则返回<code>null</code>
+     * @throws IllegalStateException         如果这个ServletContext已经初始化
+     * @throws IllegalArgumentException      如果<code>servletName</code>是空的或空字符串
+     * @throws UnsupportedOperationException 如果这个ServletContext被传递给{@link ServletContextListener#contextInitialized}方法，
+     *                                       但这个方法没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
+     *                                       也没有使用{@link javax.servlet.annotation.WebListener}进行注解注释
+     * @since 3.0
+     */
+    ServletRegistration.Dynamic addServlet(String servletName, String className);
+
+    /**
+     * 将具有给定名称和类名的servlet添加到此servlet的上下文中
+     * <p>
+     * 注册的servlet可以通过返回的{@link ServletRegistration}对象进一步配置
+     * <p>
+     * 如果这个ServletContext已经包含了一个servlet的初步ServletRegistration对象，并具有给定的<tt>servletName</tt>，
+     * 那么它将被完成(通过将给定的<tt>className</tt>分配给它)并返回
+     *
+     * @param servletName servlet的名称
+     * @param servlet     要注册的servlet实例
+     * @return 返回一个ServletRegistration对象，该对象可以用于进一步的操作配置已注册的servlet，
+     * 否则如果ServletContext已经包含了一个完整的ServletRegistration，并且该servlet具有给定的<tt>servletName</tt>，则返回<code>null</code>
+     * @throws IllegalStateException         如果这个ServletContext已经初始化
+     * @throws UnsupportedOperationException 如果这个ServletContext被传递给{@link ServletContextListener#contextInitialized}方法，
+     *                                       但这个方法没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
+     *                                       也没有使用{@link javax.servlet.annotation.WebListener}进行注解注释
+     * @throws IllegalArgumentException      如果给的servlet实例实现了{@link SingleThreadModel}或<code>servletName</code>是空的或空字符串
+     * @since 3.0
+     */
+    ServletRegistration.Dynamic addServlet(String servletName, Servlet servlet);
+
+    /**
+     * 将具有给定名称和类名的servlet添加到此servlet的上下文中
+     * <p>
+     * 注册的servlet可以通过返回的{@link ServletRegistration}对象进一步配置
+     * <p>
+     * 如果这个ServletContext已经包含了一个servlet的初步ServletRegistration对象，并具有给定的<tt>servletName</tt>，
+     * 那么它将被完成(通过将给定的<tt>className</tt>分配给它)并返回
+     * <p>
+     * 这个方法用给定的<tt>className</tt>自检类：
+     * <ol>
+     * <li>{@link com.hyf.servlet.annotation.ServletSecurity}</li>
+     * <li>{@link com.hyf.servlet.annotation.MultipartConfig}</li>
+     * <li><tt>javax.annotation.security.RunAs</tt></li>
+     * <li><tt>javax.annotation.security.DeclareRoles</tt></li>
+     * </ol>
+     * 此外，如果具有给定<tt>类名</tt>的类表示托管Bean，则此方法支持资源注入
+     *
+     * @param servletName  servlet的名称
+     * @param servletClass servlet所在的类对象实例
+     * @return 返回一个ServletRegistration对象，该对象可以用于进一步的操作配置已注册的servlet，
+     * 否则如果ServletContext已经包含了一个完整的ServletRegistration，并且该servlet具有给定的<tt>servletName</tt>，则返回<code>null</code>
+     * @throws IllegalStateException         如果这个ServletContext已经初始化
+     * @throws IllegalArgumentException      如果<code>servletName</code>是空的或空字符串
+     * @throws UnsupportedOperationException 如果这个ServletContext被传递给{@link ServletContextListener#contextInitialized}方法，
+     *                                       但这个方法没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
+     *                                       也没有使用{@link javax.servlet.annotation.WebListener}进行注解注释
+     * @since 3.0
+     */
+    ServletRegistration.Dynamic addServlet(String servletName, Class<? extends Servlet> servletClass);
+
+    /**
+     * 实例化给定的Servlet类
+     * <p>
+     * 返回的Servlet实例可以进一步定制在 调用注册到这个ServletContext的{@link #addServlet(String, Servlet)}方法之前
+     * <p>
+     * 给定的Servlet类必须定义一个零参数构造函数用来实例化它
+     * <p>
+     * 这个方法用给定的<tt>className</tt>自检类：
+     * <ol>
+     * <li>{@link com.hyf.servlet.annotation.ServletSecurity}</li>
+     * <li>{@link com.hyf.servlet.annotation.MultipartConfig}</li>
+     * <li><tt>javax.annotation.security.RunAs</tt></li>
+     * <li><tt>javax.annotation.security.DeclareRoles</tt></li>
+     * </ol>
+     * 此外，如果具有给定<tt>类名</tt>的类表示托管Bean，则此方法支持资源注入
+     *
+     * @param clazz 要实例化的Servlet类
+     * @return 返回新的Servlet实例
+     * @throws ServletException              如果给定的<tt>clazz</tt>实例化失败
+     * @throws UnsupportedOperationException 如果这个ServletContext被传递给{@link ServletContextListener#contextInitialized}方法，
+     *                                       但这个方法没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
+     *                                       也没有使用{@link javax.servlet.annotation.WebListener}进行注解注释
+     * @since 3.0
+     */
+    <T extends Servlet> T createServlet(Class<T> clazz) throws ServletException;
+
+    /**
+     *
+     * @param servletName
+     * @return
+     */
+    ServletRegistration getServletRegistration(String servletName);
 }
