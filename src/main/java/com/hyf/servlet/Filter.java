@@ -17,6 +17,7 @@ import java.io.IOException;
  * <li>触发资源访问事件</li>
  * <li>Mime-type过滤器</li>
  * </ol>
+ * @see ServletContext#addFilter(String, String)
  */
 public interface Filter {
 

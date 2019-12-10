@@ -22,11 +22,12 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("context name：" + getServletContext().getServletContextName());
-        System.out.println("context : path：" + getServletContext().getContextPath());
-        System.out.println("req context path：" + req.getContextPath());
-        System.out.println(resp.getCharacterEncoding());
-        System.out.println(resp.getContentType());
+        System.out.println("virtual_name：" + getServletContext().getVirtualServerName());
+        System.out.println("context_name：" + getServletContext().getServletContextName());
+        System.out.println("context_path：" + getServletContext().getContextPath());
+        System.out.println("req_context_path：" + req.getContextPath());
+        System.out.println("resp_characterEncoding：" + resp.getCharacterEncoding());
+        System.out.println("resp_contentType：" + resp.getContentType());
         System.out.println("localName：" + req.getLocalName());
         System.out.println("localAddr：" + req.getLocalAddr());
         System.out.println("localPort：" + req.getLocalPort());

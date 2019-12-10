@@ -1,7 +1,12 @@
 package com.hyf.servlet;
 
+/**
+ * @see ServletContext#getServletRegistrations()
+ */
 public interface ServletRegistration {
-    static class Dynamic {
+    interface Dynamic {
+        void setServletSecurity();
 
+        void setRunAsRole();
     }
 }

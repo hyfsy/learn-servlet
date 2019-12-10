@@ -7,6 +7,7 @@ import java.util.EventListener;
 /**
  * 当可以写内容且不阻塞时，调用的通知机制，向开发人员发出信号
  *
+ * @see ServletOutputStream#setWriteListener(WriteListener)
  * @since 3.1
  */
 public interface WriteListener extends EventListener {
