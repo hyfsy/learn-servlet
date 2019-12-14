@@ -2,6 +2,7 @@
 *.class
 /.idea
 /target
+rebel.xml
 
 # Log file
 *.log

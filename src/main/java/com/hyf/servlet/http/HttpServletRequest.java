@@ -1,5 +1,13 @@
 package com.hyf.servlet.http;
 
-public interface HttpServletRequest {
+import com.hyf.servlet.ServletRequest;
+
+import java.util.Collection;
+
+public interface HttpServletRequest extends ServletRequest {
     String getContextPath();
+
+    Part getPart(String name);
+
+    Collection<Part> getParts();
 }

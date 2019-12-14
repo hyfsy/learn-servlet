@@ -864,7 +864,7 @@ public interface ServletContext {
     /**
      * 返回部署ServletContext的逻辑主机的配置名
      * <p>
-     * Servlet容器可能支持多个逻辑主机。
+     * Servlet容器可能支持多个逻辑主机。getNamedDispatcher
      * <p>
      * 对于部署在逻辑主机上的所有servlet上下文，此方法必须返回相同的名称，
      * 并且此方法返回的名称必须是独立的、每个逻辑主机稳定的、适合用于将服务器配置信息与逻辑主机关联的名称。
