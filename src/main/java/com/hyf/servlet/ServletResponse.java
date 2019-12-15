@@ -31,11 +31,43 @@ public interface ServletResponse {
     String getCharacterEncoding();
 
     /**
+     * 设置响应的字符编码(MIME字符集)被发送到客户端，例如UTF-8
+     * 如果字符编码已经通过{@link #setContentType}或{@link #setLocale}设置，这个方法覆盖它
+     * 使用<code>String</code>类型的<code>text/html; charset=UTF-8</code>调用{@link #setContentType}
+     * 和这个方法可以反复调用来改变字符
+     * <p>
+     * 如果在调用了<code>getWriter</code>方法后或该请求已经提交了，再调用此方法，则此方法无效
+     * 文本媒体类型的标题，注意字符编码
+     * 如果协议提供了这样做的方法，容器必须要有<code>Content-Type</code>和字符编码用于servlet响应客户端
+     *
+     * @param charset 一个只指定字符集的字符串，由IANA字符集定义(http://www.iana.org/assignments/character-sets)
+     * @see #setContentType
+     * @see #setLocale
+     */
+    void setCharacterEncoding(String charset);
+
+    /**
      * 如果没有指定<code>Content-Type</code>，则返回 null
      *
      * @return 返回一个<code>String</code>指定内容类型，例如<code>text/html; charset=UTF-8</code>，或 null
      */
     String getContentType();
+
+    /**
+     * 如果尚未提交响应，则设置要发送的响应的内容类型给客户端
+     * 给定的内容类型可能包含字符编码规范，例如<code>text/html;charset=UTF-8</code>
+     * 如果在调用了<code>getWriter</code>方法后或该请求已经提交了，再调用此方法，则此方法无效
+     * 这个方法可以反复调用来改变内容类型和字符编码
+     * 如果协议提供了这样做的方法，容器必须要有<code>Content-Type</code>和字符编码用于servlet响应客户端
+     * 在HTTP的情况下，使用<code>Content-Type</code>响应头
+     *
+     * @param type 指定MIME内容的类型
+     * @see #setCharacterEncoding
+     * @see #setLocale
+     * @see #getOutputStream
+     * @see #getWriter
+     */
+    void setContentType(String type);
 
     /**
      * 返回一个适合编写二进制数据文件的{@link ServletOutputStream}响应，因为servlet容器不能对二进制数据编码
@@ -68,22 +100,6 @@ public interface ServletResponse {
     PrintWriter getWriter() throws IOException;
 
     /**
-     * 设置响应的字符编码(MIME字符集)被发送到客户端，例如UTF-8
-     * 如果字符编码已经通过{@link #setContentType}或{@link #setLocale}设置，这个方法覆盖它
-     * 使用<code>String</code>类型的<code>text/html; charset=UTF-8</code>调用{@link #setContentType}
-     * 和这个方法可以反复调用来改变字符
-     * <p>
-     * 如果在调用了<code>getWriter</code>方法后或该请求已经提交了，再调用此方法，则此方法无效
-     * 文本媒体类型的标题，注意字符编码
-     * 如果协议提供了这样做的方法，容器必须要有<code>Content-Type</code>和字符编码用于servlet响应客户端
-     *
-     * @param charset 一个只指定字符集的字符串，由IANA字符集定义(http://www.iana.org/assignments/character-sets)
-     * @see #setContentType
-     * @see #setLocale
-     */
-    void setCharacterEncoding(String charset);
-
-    /**
      * 设置响应中内容主体的长度在HTTP servlet中，此方法设置HTTP内容长度报头
      *
      * @param len 返回给客户端的内容的长度，用来设置响应头的<code>Content-Length</code>
@@ -99,20 +115,15 @@ public interface ServletResponse {
     void setContentLengthLong(long len);
 
     /**
-     * 如果尚未提交响应，则设置要发送的响应的内容类型给客户端
-     * 给定的内容类型可能包含字符编码规范，例如<code>text/html;charset=UTF-8</code>
-     * 如果在调用了<code>getWriter</code>方法后或该请求已经提交了，再调用此方法，则此方法无效
-     * 这个方法可以反复调用来改变内容类型和字符编码
-     * 如果协议提供了这样做的方法，容器必须要有<code>Content-Type</code>和字符编码用于servlet响应客户端
-     * 在HTTP的情况下，使用<code>Content-Type</code>响应头
+     * 返回用于响应的实际缓冲区大小，如果没有缓冲使用，则此方法返回 0
      *
-     * @param type 指定MIME内容的类型
-     * @see #setCharacterEncoding
-     * @see #setLocale
-     * @see #getOutputStream
-     * @see #getWriter
+     * @return 实际使用的缓冲区大小
+     * @see #setBufferSize
+     * @see #flushBuffer
+     * @see #isCommitted
+     * @see #reset
      */
-    void setContentType(String type);
+    int getBufferSize();
 
     /**
      * 设置响应主体的首选缓冲区大小。servlet容器将使用至少与所设置的大小一样
@@ -131,17 +142,6 @@ public interface ServletResponse {
      * @see #reset
      */
     void setBufferSize(int size);
-
-    /**
-     * 返回用于响应的实际缓冲区大小，如果没有缓冲使用，则此方法返回 0
-     *
-     * @return 实际使用的缓冲区大小
-     * @see #setBufferSize
-     * @see #flushBuffer
-     * @see #isCommitted
-     * @see #reset
-     */
-    int getBufferSize();
 
     /**
      * 强制将缓冲区中的任何内容写入客户机
@@ -185,6 +185,16 @@ public interface ServletResponse {
     void reset();
 
     /**
+     * 使用{@link #setLocale}方法为此响应指定的区域设置
+     * 提交响应后调用了<code>setLocale</code>没有效果
+     * 如果没有指定区域设置，返回容器的默认区域设置
+     *
+     * @return 返回一个响应的语言环境，如果没有指定区域设置，返回容器的默认区域设置
+     * @see #setLocale
+     */
+    Locale getLocale();
+
+    /**
      * 设置响应的语言环境及字符编码
      * 只有在下列方法/情况没调用前：
      * <ol>
@@ -204,14 +214,4 @@ public interface ServletResponse {
      * @see #setContentType
      */
     void setLocale(Locale locale);
-
-    /**
-     * 使用{@link #setLocale}方法为此响应指定的区域设置
-     * 提交响应后调用了<code>setLocale</code>没有效果
-     * 如果没有指定区域设置，返回容器的默认区域设置
-     *
-     * @return 返回一个响应的语言环境，如果没有指定区域设置，返回容器的默认区域设置
-     * @see #setLocale
-     */
-    Locale getLocale();
 }

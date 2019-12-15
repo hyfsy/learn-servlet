@@ -54,8 +54,18 @@ public class ServletResponseWrapper implements ServletResponse {
     }
 
     @Override
+    public void setCharacterEncoding(String charset) {
+        response.setCharacterEncoding(charset);
+    }
+
+    @Override
     public String getContentType() {
         return response.getContentType();
+    }
+
+    @Override
+    public void setContentType(String type) {
+        response.setContentType(type);
     }
 
     @Override
@@ -69,11 +79,6 @@ public class ServletResponseWrapper implements ServletResponse {
     }
 
     @Override
-    public void setCharacterEncoding(String charset) {
-        response.setCharacterEncoding(charset);
-    }
-
-    @Override
     public void setContentLength(int len) {
         response.setContentLength(len);
     }
@@ -84,18 +89,13 @@ public class ServletResponseWrapper implements ServletResponse {
     }
 
     @Override
-    public void setContentType(String type) {
-        response.setContentType(type);
+    public int getBufferSize() {
+        return response.getBufferSize();
     }
 
     @Override
     public void setBufferSize(int size) {
         response.setBufferSize(size);
-    }
-
-    @Override
-    public int getBufferSize() {
-        return response.getBufferSize();
     }
 
     @Override
@@ -119,13 +119,13 @@ public class ServletResponseWrapper implements ServletResponse {
     }
 
     @Override
-    public void setLocale(Locale locale) {
-        response.setLocale(locale);
+    public Locale getLocale() {
+        return response.getLocale();
     }
 
     @Override
-    public Locale getLocale() {
-        return response.getLocale();
+    public void setLocale(Locale locale) {
+        response.setLocale(locale);
     }
 
     /**

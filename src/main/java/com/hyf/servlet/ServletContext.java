@@ -84,7 +84,7 @@ public interface ServletContext {
      * 返回的值可能与{@link #getMajorVersion}不同，返回Servlet规范的版本主要由Servlet容器支持
      *
      * @return 基于这个ServletContext表示的应用程序的Servlet规范的主要版本
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -96,7 +96,7 @@ public interface ServletContext {
      * 返回的值可能与{@link #getMinorVersion}不同，后者返回Servlet容器支持的小版本Servlet规范
      *
      * @return 这个Servlet上下文所表示的应用程序所基于的Servlet规范的小版本
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -323,7 +323,7 @@ public interface ServletContext {
      * @return 如果通过给定的name和value设置这个ServletContext的初始化参数成功，返回true。
      * 如果它没有被设置，因为这个ServletContext已经包含了一个具有匹配名称的上下文初始化参数，返回false
      * @throws IllegalStateException         如果这个ServletContext已经初始化
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -407,7 +407,7 @@ public interface ServletContext {
      * 否则如果ServletContext已经包含了一个完整的ServletRegistration，并且该servlet具有给定的<tt>servletName</tt>，则返回<code>null</code>
      * @throws IllegalStateException         如果这个ServletContext已经初始化
      * @throws IllegalArgumentException      如果<code>servletName</code>是空的或空字符串
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -427,7 +427,7 @@ public interface ServletContext {
      * @return 返回一个ServletRegistration对象，该对象可以用于进一步的操作配置已注册的servlet，
      * 否则如果ServletContext已经包含了一个完整的ServletRegistration，并且该servlet具有给定的<tt>servletName</tt>，则返回<code>null</code>
      * @throws IllegalStateException         如果这个ServletContext已经初始化
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @throws IllegalArgumentException      如果给的servlet实例实现了{@link SingleThreadModel}或<code>servletName</code>是空的或空字符串
@@ -458,7 +458,7 @@ public interface ServletContext {
      * 否则如果ServletContext已经包含了一个完整的ServletRegistration，并且该servlet具有给定的<tt>servletName</tt>，则返回<code>null</code>
      * @throws IllegalStateException         如果这个ServletContext已经初始化
      * @throws IllegalArgumentException      如果<code>servletName</code>是空的或空字符串
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -484,7 +484,7 @@ public interface ServletContext {
      * @param clazz 要实例化的Servlet类
      * @return 返回新的Servlet实例
      * @throws ServletException              如果给定的<tt>clazz</tt>实例化失败
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -497,7 +497,7 @@ public interface ServletContext {
      * @param servletName servlet的名称
      * @return 通过给定的<tt>servletName</tt>返回servlet的(完整或初步)ServletRegistration，
      * 如果该名称不存在ServletRegistration，则返回null
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -513,7 +513,7 @@ public interface ServletContext {
      * 如果允许，对返回映射的任何更改都不能影响这个ServletContext
      *
      * @return 返回与当前在此ServletContext中注册的所有servlet对应的（完整的和初步的）ServletRegistration 对象的映射
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -535,7 +535,7 @@ public interface ServletContext {
      * 如果这个ServletContext已经包含了一个具有给定名称的过滤器的完整的FilterRegistration，则返回null
      * @throws IllegalStateException         如果这个ServletContext已经被初始化
      * @throws IllegalArgumentException      如果filterName为null或一个空字符串
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -555,7 +555,7 @@ public interface ServletContext {
      * 如果这个ServletContext已经包含了一个具有给定名称的过滤器的完整的FilterRegistration，则返回null
      * @throws IllegalStateException         如果这个ServletContext已经被初始化
      * @throws IllegalArgumentException      如果filterName为null或一个空字符串
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -575,7 +575,7 @@ public interface ServletContext {
      * 如果这个ServletContext已经包含了一个具有给定名称的过滤器的完整的FilterRegistration，则返回null
      * @throws IllegalStateException         如果这个ServletContext已经被初始化
      * @throws IllegalArgumentException      如果filterName为null或一个空字符串
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -592,7 +592,7 @@ public interface ServletContext {
      * @param clazz 要实例化的过滤器类
      * @return 新过滤器实例
      * @throws ServletException              如果给定的<code>Class</code>对象初始化失败
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -605,7 +605,7 @@ public interface ServletContext {
      * @param filterName 过滤器的名称
      * @return 返回给定<tt>filterName</tt>的过滤器的（完整或初步的）FilterRegistration对象，
      * 如果在该名称下不存在FilterRegistration，则返回null
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -621,7 +621,7 @@ public interface ServletContext {
      * 如果允许，对返回映射的任何更改都不能影响这个ServletContext
      *
      * @return 返回FilterRegistration对象的映射(完整的和初步的)，对应于当前在这个ServletContext中注册的所有过滤器
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -634,7 +634,7 @@ public interface ServletContext {
      * 重复调用此方法将返回相同的<tt>SessionCookieConfig</tt>实例
      *
      * @return 可以通过<tt>SessionCookieConfig</tt>对象配置代表该<tt>ServletContext</tt>的会话跟踪cookie的各种属性
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -648,7 +648,7 @@ public interface ServletContext {
      *
      * @param sessionTrackingModes 一组会话跟踪模式，对<tt>ServletContext</tt>有效
      * @throws IllegalStateException         如果当前ServletContext已经被初始化
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @throws IllegalArgumentException      如果SessionTrackingModes指定了一个与SessionTrackingMode.SSL不同的，却带有SessionTrackingMode.SSL的SessionTrackingMode的组合。
@@ -661,7 +661,7 @@ public interface ServletContext {
      * 获取此<tt>ServletContext</tt>默认支持的会话跟踪模式
      *
      * @return 此<tt>ServletContext</tt>默认支持的会话跟踪模式集合
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -676,7 +676,7 @@ public interface ServletContext {
      * 默认情况下，{@link #getDefaultSessionTrackingModes}返回的会话跟踪模式是有效的
      *
      * @return 此<tt>ServletContext</tt>有效的会话跟踪模式集合
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -710,7 +710,7 @@ public interface ServletContext {
      * @throws IllegalArgumentException      如果给定名称的类没有实现上述的任何接口，
      *                                       或者实现{@link ServletContextListener}而这个ServletContext没有传递给{@link ServletContainerInitializer#onStartup}
      * @throws IllegalStateException         如果这个ServletContext已经被初始化
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -740,7 +740,7 @@ public interface ServletContext {
      * @throws IllegalArgumentException      如果给定名称的类没有实现上述的任何接口，
      *                                       或者实现{@link ServletContextListener}而这个ServletContext没有传递给{@link ServletContainerInitializer#onStartup}
      * @throws IllegalStateException         如果这个ServletContext已经被初始化
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -772,7 +772,7 @@ public interface ServletContext {
      * @throws IllegalArgumentException      如果给定名称的类没有实现上述的任何接口，
      *                                       或者实现{@link ServletContextListener}而这个ServletContext没有传递给{@link ServletContainerInitializer#onStartup}
      * @throws IllegalStateException         如果这个ServletContext已经被初始化
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.0
@@ -800,7 +800,7 @@ public interface ServletContext {
      * @param clazz 要实例化的EventListener类
      * @return 返回新的EventListener实例
      * @throws ServletException              如果给定的<tt>clazz</tt>实例化失败
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @throws IllegalArgumentException      如果给定的类<i>没有</i>实现任何一个接口：
@@ -820,7 +820,7 @@ public interface ServletContext {
      *
      * @return 通过ServletContext 获取web应用程序中<code>web.xml</code>和<code>web-fragment.xml</code>描述文件中的带<code>jsp-config</code>标签的配置信息，
      * 如果没有该配置，则返回<code>null</code>
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @see JspConfigDescriptor
@@ -836,7 +836,7 @@ public interface ServletContext {
      * 那么安全管理器会调用<code>checkPermission</code>方法和<code>RuntimePermission(“getClassLoader”)</code>来检查是否应该允许访问所请求的类加载器
      *
      * @return 返回由ServletContext表示的web应用程序的类装入器
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @throws SecurityException             如果安全管理器拒绝访问请求的类装入器
@@ -852,7 +852,7 @@ public interface ServletContext {
      * 和{@link ServletRegistration.Dynamic#setRunAsRole}方法中不需要声明
      *
      * @param roleNames 声明的角色名
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @throws IllegalArgumentException      如果参数roleNames为null或空字符串
@@ -872,7 +872,7 @@ public interface ServletContext {
      * 返回的值不期望或要求与逻辑主机的网络地址或主机名相等
      *
      * @return 返回一个字符串，其中包含部署servlet上下文的逻辑主机的配置名，如：Catalina/localhost
-     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized()}方法，
+     * @throws UnsupportedOperationException 如果这个ServletContext被传给{@link ServletContextListener}的子类的{@link ServletContextListener#contextInitialized}方法，
      *                                       但是该子类没有在<code>web.xml</code>或<code>web-fragment.xml</code>中声明，
      *                                       并且也没有用{@link com.hyf.servlet.annotation.WebListener}注解注释
      * @since 3.1

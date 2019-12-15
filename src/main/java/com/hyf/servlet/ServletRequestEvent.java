@@ -15,7 +15,7 @@ public class ServletRequestEvent extends EventObject {
     private ServletRequest request;
 
     /**
-     *为给定的ServletContext和ServletRequest构造一个ServletRequestEvent
+     * 为给定的ServletContext和ServletRequest构造一个ServletRequestEvent
      *
      * @param context web应用程序的ServletContext
      * @param request 正在发送事件的ServletRequest
