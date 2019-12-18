@@ -19,7 +19,7 @@ public class ServletResponseWrapper implements ServletResponse {
      *
      * @throws IllegalArgumentException 如果response对象为null
      */
-    ServletResponseWrapper(ServletResponse response) {
+    public ServletResponseWrapper(ServletResponse response) {
         if (response == null) {
             throw new IllegalArgumentException("Response cannot be null");
         }

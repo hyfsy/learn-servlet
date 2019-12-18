@@ -7,13 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4756bbf8-43cb-4c21-88ce-803b961c759c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/package.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/JspPropertyGroupDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/TaglibDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/package.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletRequestWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletResponseWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpUpgradeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/WebConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/JspConfigDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/JspConfigDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/package.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/package.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletResponseWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletResponseWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/Part.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/servletlearn/TestASCII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyf/test/TestASCII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hyf/servlet/servletlearn/TestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hyf/test/TestServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,40 +52,42 @@
     <session id="1540726435">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.26" value="2" />
-          <entry key="project.open.time.28" value="2" />
+          <entry key="project.open.time.28" value="3" />
           <entry key="project.open.time.29" value="2" />
           <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.54" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="45" />
-          <entry key="html" value="622" />
-          <entry key="java" value="41445" />
+          <entry key="html" value="1805" />
+          <entry key="java" value="49826" />
           <entry key="md" value="39" />
           <entry key="properties" value="331" />
-          <entry key="txt" value="807" />
+          <entry key="txt" value="833" />
           <entry key="xml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="622" />
-          <entry key="JAVA" value="41445" />
+          <entry key="HTML" value="1805" />
+          <entry key="JAVA" value="49826" />
           <entry key="Markdown" value="9" />
-          <entry key="PLAIN_TEXT" value="852" />
+          <entry key="PLAIN_TEXT" value="878" />
           <entry key="Properties" value="331" />
           <entry key="Scratch" value="30" />
           <entry key="XML" value="15" />
@@ -89,29 +98,29 @@
           <entry key="class" value="2" />
           <entry key="gitignore" value="5" />
           <entry key="groovy" value="1" />
-          <entry key="html" value="16" />
+          <entry key="html" value="19" />
           <entry key="http" value="2" />
-          <entry key="java" value="716" />
+          <entry key="java" value="777" />
           <entry key="js" value="2" />
           <entry key="md" value="5" />
           <entry key="png" value="1" />
-          <entry key="properties" value="14" />
+          <entry key="properties" value="18" />
           <entry key="txt" value="1" />
-          <entry key="xml" value="7" />
+          <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="HTML" value="16" />
+          <entry key="HTML" value="19" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="716" />
+          <entry key="JAVA" value="777" />
           <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Properties" value="14" />
+          <entry key="Properties" value="18" />
           <entry key="Scratch" value="6" />
-          <entry key="XML" value="7" />
+          <entry key="XML" value="8" />
         </counts>
       </usages-collector>
     </session>
@@ -120,27 +129,41 @@
     <favorites_list name="servletlearn" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/test/TestServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
         <option value="XML" />
-        <option value="Interface" />
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>javax.servlet.error.request_uri</find>
-      <find>getContextPath</find>
-      <find>getLocalName</find>
-      <find>getResource</find>
-      <find>getInitParameterNames</find>
       <find>init</find>
       <find>Attribute</find>
       <find>Archetype Created Web Application</find>
@@ -166,10 +189,17 @@
       <find>JspPropertyGroupDescriptor</find>
       <find>TaglibDescriptor</find>
       <find>Collec</find>
+      <find>：</find>
+      <find>CGI</find>
+      <find>getAuthType</find>
+      <find>getDateHead</find>
+      <find>上返回</find>
     </findStrings>
     <replaceStrings>
       <replace>context</replace>
       <replace>contextInitialized</replace>
+      <replace>:</replace>
+      <replace>的</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -183,20 +213,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/HttpMethodConstraint.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/MultipartConfigElement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/servletlearn/TestServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/HttpConstraintElement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/HttpMethodConstraintElement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletSecurityElement.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletContextEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletContextListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletContextAttributeListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletRequestListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletRequestAttributeListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/Part.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletContextAttributeEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletRequestAttributeEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpSessionEvent.java" />
@@ -205,7 +225,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpSessionListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpSessionIdListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpSessionAttributeListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/AsyncContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/AsyncEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/AsyncListener.java" />
@@ -222,7 +241,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletRequestEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletResponseWrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/WebInitpatameter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/WebFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/WebInitParam.java" />
@@ -234,6 +252,18 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/package.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/package.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/package.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpSession.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hyf/test/TestServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpUpgradeHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/WebConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/Part.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletResponseWrapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletRequestWrapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletResponseWrapper.java" />
       </list>
     </option>
   </component>
@@ -339,165 +369,14 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="hyf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="hyf" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="hyf" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="annotation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="hyf" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="descriptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="hyf" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="hyf" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="servletlearn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: javax.servlet:javax.servlet-api:3.1.0" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: javax.servlet:javax.servlet-api:3.1.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="javax.servlet-api-3.1.0.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: javax.servlet:javax.servlet-api:3.1.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="javax.servlet-api-3.1.0.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="javax" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: javax.servlet:javax.servlet-api:3.1.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="javax.servlet-api-3.1.0.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="javax" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: javax.servlet:javax.servlet-api:3.1.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="javax.servlet-api-3.1.0.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="javax" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="descriptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletlearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: javax.servlet:javax.servlet-api:3.1.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="javax.servlet-api-3.1.0.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="javax" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="http" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="servletRequest&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/ServletRequest.java&#10;Cookie&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/http/Cookie.java&#10;HttpServletRespon&#9;FILE&#9;jar://E:/study/.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletResponse.java&#10;HttpConstraint&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/annotation/HttpConstraint.java&#10;HttpConstraintElement&#9;PSI&#9;JAVA://com.hyf.servlet.HttpConstraintElement&#10;RequestDis&#9;FILE&#9;jar://E:/study/.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/RequestDispatcher.java&#10;RequestDIspatcher&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/RequestDispatcher.java&#10;ServletContainer&#9;PSI&#9;JAVA://com.hyf.servlet.ServletContainerInitializer&#10;ServletRequest&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/ServletRequest.java&#10;ServletConfig&#9;FILE&#9;jar://E:/study/.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/ServletConfig.java&#10;ServletRequestWrapper&#9;PSI&#9;JAVA://com.hyf.servlet.ServletRequestWrapper&#10;RequestDispatcher&#9;FILE&#9;jar://E:/study/.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/RequestDispatcher.java" />
+    <property name="SearchEverywhereHistoryKey" value="HttpServletRequ&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/http/HttpServletRequestWrapper.java&#10;HttpServletRequest&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/http/HttpServletRequest.java&#10;HttpRequest&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/http/HttpServletRequest.java&#10;TestServlet&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/test/TestServlet.java&#10;servletRequest&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/ServletRequest.java&#10;Cookie&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/http/Cookie.java&#10;HttpServletRespon&#9;FILE&#9;jar://E:/study/.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletResponse.java&#10;HttpConstraint&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/annotation/HttpConstraint.java&#10;HttpConstraintElement&#9;PSI&#9;JAVA://com.hyf.servlet.HttpConstraintElement&#10;RequestDis&#9;FILE&#9;jar://E:/study/.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/RequestDispatcher.java&#10;RequestDIspatcher&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/RequestDispatcher.java&#10;ServletContainer&#9;PSI&#9;JAVA://com.hyf.servlet.ServletContainerInitializer&#10;ServletRequest&#9;FILE&#9;file://E:/study/idea2/servletlearn/src/main/java/com/hyf/servlet/ServletRequest.java&#10;ServletConfig&#9;FILE&#9;jar://E:/study/.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/ServletConfig.java&#10;ServletRequestWrapper&#9;PSI&#9;JAVA://com.hyf.servlet.ServletRequestWrapper&#10;RequestDispatcher&#9;FILE&#9;jar://E:/study/.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/RequestDispatcher.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576419317995" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576595017876" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Markdown" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -519,6 +398,7 @@
       <recent name="E:\study\idea2\servletlearn\src\main\webapp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\study\idea2\servletlearn\src\main\java\com\hyf\test" />
       <recent name="E:\study\idea2\servletlearn\src\main\webapp" />
       <recent name="E:\study\idea2\servletlearn\src\main\resources" />
     </key>
@@ -708,7 +588,13 @@
       <workItem from="1576234613021" duration="16084000" />
       <workItem from="1576286831065" duration="9985000" />
       <workItem from="1576303515448" duration="19296000" />
-      <workItem from="1576373187248" duration="40346000" />
+      <workItem from="1576373187248" duration="40554000" />
+      <workItem from="1576459991639" duration="52000" />
+      <workItem from="1576492545708" duration="12987000" />
+      <workItem from="1576541793487" duration="11947000" />
+      <workItem from="1576581877478" duration="9185000" />
+      <workItem from="1576627296920" duration="649000" />
+      <workItem from="1576641329244" duration="2407000" />
     </task>
     <task id="LOCAL-00001" summary="创建servlet学习项目">
       <created>1575693645643</created>
@@ -829,11 +715,18 @@
       <option name="project" value="LOCAL" />
       <updated>1576415657235</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="完成3.0新出的关于获取jsp相关配置的类">
+      <created>1576419463165</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1576419463165</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226092000" />
+    <option name="totallyTimeSpent" value="263527000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -847,11 +740,11 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49822065" visible="true" weight="0.25222313" />
-      <window_info id="Structure" order="1" sideWeight="0.5017794" side_tool="true" weight="0.25788197" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="UI Designer" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49822065" visible="true" weight="0.2603072" />
+      <window_info id="Designer" order="1" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Structure" order="4" sideWeight="0.5017794" side_tool="true" weight="0.25788197" />
       <window_info id="Favorites" order="5" sideWeight="0.5017794" side_tool="true" weight="0.25383994" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" weight="0.32983023" />
@@ -861,17 +754,17 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.3291815" />
       <window_info anchor="bottom" id="Run" order="4" weight="0.3291815" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.497979" weight="0.48042706" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49717057" weight="0.48042706" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.3291815" />
       <window_info anchor="bottom" id="Application Servers" order="9" weight="0.3291815" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3291815" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5004042" side_tool="true" weight="0.3950178" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50282943" side_tool="true" weight="0.48042706" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32740214" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3291815" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.3291815" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.7402135" />
       <window_info anchor="bottom" id="JRebel Console" order="16" sideWeight="0.502021" side_tool="true" weight="0.48042706" />
       <window_info anchor="bottom" id="Dependency Viewer" order="17" weight="0.702847" />
       <window_info active="true" anchor="bottom" id="REST Client" order="18" visible="true" weight="0.54270464" />
@@ -929,6 +822,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
     <MESSAGE value="创建servlet学习项目" />
     <MESSAGE value="编写Servlet/ServletConfig/RequestServlet接口，RequestServlet写到一半" />
     <MESSAGE value="编写完成RequestServlet接口，准备Filter接口" />
@@ -944,7 +838,8 @@
     <MESSAGE value="编写Servlet3.0及以后新出的Servlet异步操作相关的容器，接口及监听事件等" />
     <MESSAGE value="编写SessionCookieConfig 3.0的配置类，GenericServlet，UnavailableException类，完成servlet包下的所有类" />
     <MESSAGE value="完成剩下的三个3.0的Web注解" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成剩下的三个3.0的Web注解" />
+    <MESSAGE value="完成3.0新出的关于获取jsp相关配置的类" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成3.0新出的关于获取jsp相关配置的类" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
@@ -960,285 +855,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletSecurityElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/SessionCookieConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-528">
-          <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/SessionTrackingMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/SingleThreadModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/WriteListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/UnavailableException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="99" column="7" selection-start-line="99" selection-start-column="7" selection-end-line="99" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/http/package.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="948" lean-forward="true" selection-start-line="948" selection-end-line="948" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/Part.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1868">
-          <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/WebConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpSessionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#3940#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpSessionEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
-          <folding>
-            <element signature="e#3244#3245#0" expanded="true" />
-            <element signature="e#3299#3300#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpSessionContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletRequestWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="89" column="55" lean-forward="true" selection-start-line="89" selection-start-column="55" selection-end-line="89" selection-end-column="55" />
-          <folding>
-            <element signature="e#3646#3647#0" expanded="true" />
-            <element signature="e#3708#3709#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/Cookie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="129" column="52" lean-forward="true" selection-start-line="129" selection-start-column="52" selection-end-line="129" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletResponseWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1868">
-          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="218" column="7" lean-forward="true" selection-start-line="218" selection-start-column="7" selection-end-line="218" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpUpgradeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpSessionBindingListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="81" column="17" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15510">
-          <caret line="707" column="39" lean-forward="true" selection-start-line="707" selection-start-column="39" selection-end-line="707" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#26518#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/WebListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-214">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/MultipartConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/ServletSecurity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/HttpMethodConstraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/HttpConstraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-412">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/annotation/WebListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="61" column="3" lean-forward="true" selection-start-line="61" selection-start-column="3" selection-end-line="61" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/HandlesTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/annotation/WebFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="114" column="4" lean-forward="true" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/annotation/WebInitParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="60" column="37" lean-forward="true" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/annotation/WebServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="111" column="36" lean-forward="true" selection-start-line="111" selection-start-column="36" selection-end-line="111" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/WebInitParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/WebServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1408">
-          <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/WebFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1606">
-          <caret line="73" column="6" lean-forward="true" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -1253,13 +869,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/servletlearn/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/servletlearn/Test.java" />
     <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/descriptor/JspPropertyGroupDescriptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1278,37 +888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/TaglibDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/JspConfigDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/JspPropertyGroupDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="109" column="53" lean-forward="true" selection-start-line="109" selection-start-column="53" selection-end-line="109" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/package.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1333,10 +912,339 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/servletlearn/TestASCII.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/servletlearn/TestASCII.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/TaglibDescriptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/package.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/JspPropertyGroupDescriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="109" column="53" selection-start-line="109" selection-start-column="53" selection-end-line="109" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/WebServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/WebListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/WebInitParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/annotation/WebFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="66" column="7" lean-forward="true" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/descriptor/JspConfigDescriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/servletlearn/TestServlet.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/test/TestASCII.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="297" column="7" lean-forward="true" selection-start-line="297" selection-start-column="7" selection-end-line="297" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/GenericServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="86" column="19" lean-forward="true" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpUpgradeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpUpgradeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/WebConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/WebConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/http/LocalStrings_fr.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1202" />
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/http/LocalStrings_es.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1246" />
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/http/LocalStrings_ja.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/http/LocalStrings.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/Part.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="153" column="42" lean-forward="true" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/Part.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="715" column="36" selection-start-line="715" selection-start-column="36" selection-end-line="715" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/Cookie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="101" column="13" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/Cookie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletRequestWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="342" column="6" lean-forward="true" selection-start-line="342" selection-start-column="6" selection-end-line="342" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="263" column="18" selection-start-line="263" selection-start-column="18" selection-end-line="263" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/ServletResponseWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="152" column="7" lean-forward="true" selection-start-line="152" selection-start-column="7" selection-end-line="152" selection-end-column="7" />
+          <folding>
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="290" column="48" lean-forward="true" selection-start-line="290" selection-start-column="48" selection-end-line="290" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletRequestWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="321" column="37" lean-forward="true" selection-start-line="321" selection-start-column="37" selection-end-line="321" selection-end-column="37" />
+          <folding>
+            <element signature="e#10507#10508#0" expanded="true" />
+            <element signature="e#10589#10590#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletRequestWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4350">
+          <caret line="248" column="87" lean-forward="true" selection-start-line="248" selection-start-column="87" selection-end-line="248" selection-end-column="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#5787#5788#0" expanded="true" />
+            <element signature="e#5869#5870#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/servlet/http/HttpServletResponseWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="217" column="60" selection-start-line="217" selection-start-column="60" selection-end-line="217" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
+            <element signature="e#1006#1007#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="e#1131#1132#0" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="e#1272#1273#0" expanded="true" />
+            <element signature="e#1329#1330#0" expanded="true" />
+            <element signature="e#1397#1398#0" expanded="true" />
+            <element signature="e#1462#1463#0" expanded="true" />
+            <element signature="e#1538#1539#0" expanded="true" />
+            <element signature="e#2037#2038#0" expanded="true" />
+            <element signature="e#2109#2110#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+            <element signature="e#2252#2253#0" expanded="true" />
+            <element signature="e#2322#2323#0" expanded="true" />
+            <element signature="e#2391#2392#0" expanded="true" />
+            <element signature="e#2461#2462#0" expanded="true" />
+            <element signature="e#2530#2531#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
+            <element signature="e#2672#2673#0" expanded="true" />
+            <element signature="e#2742#2743#0" expanded="true" />
+            <element signature="e#2814#2815#0" expanded="true" />
+            <element signature="e#2876#2877#0" expanded="true" />
+            <element signature="e#2940#2941#0" expanded="true" />
+            <element signature="e#2984#2985#0" expanded="true" />
+            <element signature="e#3049#3050#0" expanded="true" />
+            <element signature="e#3100#3101#0" expanded="true" />
+            <element signature="e#3160#3161#0" expanded="true" />
+            <element signature="e#3218#3219#0" expanded="true" />
+            <element signature="e#3287#3288#0" expanded="true" />
+            <element signature="e#3358#3359#0" expanded="true" />
+            <element signature="e#3428#3429#0" expanded="true" />
+            <element signature="e#3492#3493#0" expanded="true" />
+            <element signature="e#3562#3563#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletResponseWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="291" column="5" lean-forward="true" selection-start-line="291" selection-start-column="5" selection-end-line="291" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hyf/test/TestServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-package com.hyf.servlet.servletlearn;
+package com.hyf.test;
 
 import java.text.MessageFormat;
 

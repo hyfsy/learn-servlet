@@ -5,30 +5,93 @@
     <title>测试</title>
     <script src="static/js/jquery/jquery-3.3.1.js"></script>
     <!--<meta http-equiv="Refresh" content="3;url='http://www.baidu.com'">-->
+    <style>
+        body {
+            background: url("https://www.w3school.com.cn/i/eg_tulip.jpg") no-repeat;
+            background-size: 100%;
+        }
+    </style>
 </head>
 <body>
 <input type="button" onclick="goController()" value="测试servlet执行过程"/>
+<input type="text" value="" id="empty_text">
 <script>
     function goController() {
         var data = "{'name','姓名'}";
         $.ajax({
-            url: "/servletlearn/testservlet",
+            url: "/servletlearn/testservlet;jsessionid=B49D165B1770FB7CB8A9FB1CC3525235?test=123",
             type: "post",
             data: data,
             dataType: "json",
             success: function (result) {
                 console.log(result);
             },
-            error:function(XMLHttpRequest, textStatus, errorThrown){
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log(XMLHttpRequest);
                 console.log(textStatus);
                 console.log(errorThrown);
             },
-            complete: function(){
+            complete: function () {
                 console.log("complete");
             }
         })
     }
+
+    function getImgPath() {
+        var pic_arr = ["beauty", "bing", "lofter", "infinity", "sogou"];
+        var pic_pre = "https://api.ooopn.com/image/";
+        var pic_suf = "/api.php?type=jump";
+        var bing_suf = "&v=2";
+
+        var now_pic = pic_pre;
+        var isBing = false;
+        var random = Math.random() * 10;
+        switch (Math.floor(random)) {
+            case 0:
+            case 1:
+            case 2:
+                //pretty
+                now_pic += pic_arr[0];
+                break;
+            case 3:
+            case 4:
+                //bing
+                now_pic += pic_arr[1];
+                isBing = true;
+                break;
+            // case 5:
+            // case 6:
+            //     //wy
+            //     now_pic += pic_arr[2];
+            //     break;
+            case 7:
+            case 8:
+                //infinity
+                now_pic += pic_arr[3];
+                break;
+            case 9:
+                //sogou
+                now_pic += pic_arr[4];
+                break;
+            default :
+                now_pic = "";
+                break;
+        }
+        now_pic += pic_suf;
+        if (isBing) {
+            now_pic += bing_suf;
+        }
+        return now_pic;
+    }
+
+    function changeBodyImg(img) {
+        var body = $("body");
+        body.css("background", "url(" + img + ") no-repeat");
+        body.css("background-size", "100%");
+        console.log(img)
+    }
+
+    changeBodyImg(getImgPath());
 </script>
 </body>
 </html>
