@@ -1,10 +1,12 @@
 package com.hyf.servlet.http;
 
-public interface HttpUtils {
+public class HttpUtils {
 
     /**
      * @return
      * @see HttpServletRequest#getRequestURI()
      */
-    String getRequestURL();
+    String getRequestURL() {
+        return "";
+    }
 }
