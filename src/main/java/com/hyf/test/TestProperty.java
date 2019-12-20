@@ -9,5 +9,9 @@ public class TestProperty {
             i++;
             System.out.print((char) i + " ");
         }
+        System.out.println();
+        System.out.println("1" + new StringBuilder().toString() + "!");
+
+        System.out.println(31 - 32 > 0);
     }
 }

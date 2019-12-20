@@ -7,8 +7,13 @@
     <!--<meta http-equiv="Refresh" content="3;url='http://www.baidu.com'">-->
     <style>
         body {
-            background: url("https://www.w3school.com.cn/i/eg_tulip.jpg") no-repeat;
-            background-size: 100%;
+            /* background: url("https://www.w3school.com.cn/i/eg_tulip.jpg") no-repeat;
+             background-size: 100%;*/
+            background-image: url(http://coding.imweb.io/img/project/blog/bg.jpg);
+            background-position: right bottom;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: white;
         }
     </style>
 </head>
@@ -86,12 +91,32 @@
 
     function changeBodyImg(img) {
         var body = $("body");
-        body.css("background", "url(" + img + ") no-repeat");
-        body.css("background-size", "100%");
+        body.css("background", "url(" + img + ")");
+        body.css("background-repeat", "no-repeat");
+        body.css("background-size", "30% 37%");
+        body.css("background-position", "right bottom");
+        body.css("background-color", "white");
+        body.css("background-attachment", "fixed");
         console.log(img)
     }
 
+    function ajaxImage(imgPath) {
+        $.ajax({
+            url: imgPath,
+            success: function (data) {
+                console.log(data);
+            },
+            error: function () {
+                console.log("error")
+            },
+            complete: function () {
+                console.log("完成")
+            }
+        })
+    }
+
     changeBodyImg(getImgPath());
+    // ajaxImage(getImgPath());
 </script>
 </body>
 </html>
