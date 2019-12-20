@@ -3,6 +3,7 @@
 /.idea
 /target
 rebel.xml
+.iml
 
 # Log file
 *.log
