@@ -25,7 +25,6 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         System.out.println(" req localName: " + req.getLocalName());
         System.out.println(" req localAddr: " + req.getLocalAddr());
         System.out.println(" req localPort: " + req.getLocalPort());
@@ -38,6 +37,7 @@ public class TestServlet extends HttpServlet {
         System.out.println(" req remoteHost: " + req.getRemoteHost());
         System.out.println(" req remotePort: " + req.getRemotePort());
         System.out.println(" req remoteUser: " + req.getRemoteUser());
+        System.out.println(" req servlet_path: " + req.getServletPath());
         System.out.println("*req characterEncoding: " + req.getCharacterEncoding());
         System.out.println("*resp characterEncoding: " + resp.getCharacterEncoding());
         System.out.println(" resp contentType: " + resp.getContentType());
@@ -55,6 +55,7 @@ public class TestServlet extends HttpServlet {
         System.out.println("*http_req path_info: " + req.getPathInfo());
         System.out.println("*http_req url: " + req.getRequestURL());
         System.out.println("*http_req uri: " + req.getRequestURI());
+//        System.out.println(" http_req user_principal: " + req.getUserPrincipal().getName());
         System.out.println("*session id: " + req.getSession().getId());
         System.out.println();
 //        设置字符集

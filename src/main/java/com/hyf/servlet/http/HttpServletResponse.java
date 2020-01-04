@@ -100,7 +100,7 @@ public interface HttpServletResponse extends ServletResponse {
     int SC_SEE_OTHER = 303;
 
     /**
-     * 状态码(304)，指示条件GET操作发现资源可用且未修改
+     * 状态码(304)，发现资源可用且未修改，则只返回请求头，不返回请求体，减少http带宽，详见 Last-Modified缓存机制
      */
     int SC_NOT_MODIFIED = 304;
 
