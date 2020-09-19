@@ -110,6 +110,8 @@ public interface ServletRequest {
     /**
      * 返回一个包含<code>String</code>对象的数组，存放给定请求参数的所有值
      * 如果参数不存在则返回<code>null</code>
+     * <p>
+     * 数组表示为前端相同name传递的参数
      *
      * @param name 请求参数名称
      * @return 包含参数值的对象数组
@@ -121,6 +123,8 @@ public interface ServletRequest {
      * 获取对应参数名称的值<code>Map</code>对象
      * key为参数名称，value为参数值数组
      * key为字符串类型，value是字符串数组类型
+     * <p>
+     * 数组表示为前端相同name传递的参数
      *
      * @param name 属性名称
      * @return 存放对应名称的属性值的不可变的Map对象
